@@ -1,499 +1,306 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-    <meta charset="utf-8">
-    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
-    <title>NAKOTV</title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-     <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet" />
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+<head prefix="og: http://ogp.me/ns# video: http://ogp.me/ns/video#">
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<meta content="NakoTV" name="Title" />
+	<title>NakoTV</title>
+	<meta name="medium" content="video" />
+	<meta property="og:site_name" content="NakoTV" />
+	<meta property="og:title" content="NakoTV"/>
+	<meta property="og:type" content="video" />
 
-  <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
-  <!-- <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
-    <!-- 
-    -->
-    <meta name="viewport" content="width=device-width">        
-    <link rel="stylesheet" href="css/templatemo_main.css">
-    <!-- templatemo 412 authentic -->
+
+	<link rel="stylesheet" href="https://static.weeb.tv/style.min.css" type="text/css" media="all" />
 </head>
 <body>
-  
-    <div id="main-wrapper">
+<div id="container">
+	<div id="header">
+		<div class="tabs">
+		
+		</div>
+		<div style="clear:both;"></div>
+	</div>
+	<div class="block white">
+	<div style="margin:0 auto;display:block;text-align:center;margin-bottom:20px;">
+	</div>
+	
+	
+	<div id="player_video">
+		<iframe src="" frameborder="0" height="100%" width="100%" id="playerIframe" scrolling="no" allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+	</div>
+	<!-- root element of the playlist -->
+	<!-- the playlist. simple HTML controlled with CSS -->
+	<div id="playlist">
+		<input id="playlistSearchBox" type="text" placeholder="Szukaj TV" />
+		<svg id="svgRefreshPlaylist" width="14" height="14" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1639 1056q0 5-1 7-64 268-268 434.5t-478 166.5q-146 0-282.5-55t-243.5-157l-129 129q-19 19-45 19t-45-19-19-45v-448q0-26 19-45t45-19h448q26 0 45 19t19 45-19 45l-137 137q71 66 161 102t187 36q134 0 250-65t186-179q11-17 53-117 8-23 30-23h192q13 0 22.5 9.5t9.5 22.5zm25-800v448q0 26-19 45t-45 19h-448q-26 0-45-19t-19-45 19-45l138-138q-148-137-349-137-134 0-250 65t-186 179q-11 17-53 117-8 23-30 23h-199q-13 0-22.5-9.5t-9.5-22.5v-7q65-268 270-434.5t480-166.5q146 0 284 55.5t245 156.5l130-129q19-19 45-19t45 19 19 45z"/></svg>
+	<div id="playlistContent">
+		<a id="playlistItem_0" class="playing" href="javascript:void(null)" onclick="programmeShow('https://www.hlsplayer.org/play?url=https://ec01.gdn2.cache.orange.pl/dai/org1/vb/tvp1hd/index.m3u8');">
+			<img src="/logo/tvp1.jpg" alt="tvp1" width="40" height="40"/><strong>TVP1 HD</strong>
+			<div style="clear:both;"></div>
+		</a>
+		<a id="playlistItem_0" class="playing" href="javascript:void(null)" onclick="programmeShow('https://www.hlsplayer.org/play?url=https://ec01.gdn2.cache.orange.pl/dai/org1/vb/tvp2hd/index.m3u8');">
+			<img src="/logo/tvp2.jpg" alt="tvp2" width="40" height="40"/><strong>TVP2 HD</strong><div style="clear:both;"></div></a>
 
-                <div class="container">
-                    <!-- Static navbar -->
-                    <div class="navbar navbar-default" role="navigation">
-                        <div class="container-fluid">
-                          <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                              <span class="sr-only">Toggle navigation</span>
-                              <span class="icon-bar"></span>
-                              <span class="icon-bar"></span>
-                              <span class="icon-bar"></span>
-                          </button>
-                      </div>
-                      <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                          <li class="active"><a href="#templatemo-page1"><i class="fa fa-video-camera"></i>TVP1</a></li>
-                          <li><a href="#templatemo-page2"><i class="fa fa-video-camera"></i>TVP2</a></li>
-                          <li><a href="#templatemo-page3"><i class="fa fa-video-camera"></i>POLSAT</a></li>
-                          <li><a href="#templatemo-page4"><i class="fa fa-video-camera"></i>TVN</a></li>
-                          <li><a href="#templatemo-page5"><i class="fa fa-video-camera"></i>TVN7</a></li>
-                          <li><a href="#templatemo-page6"><i class="fa fa-video-camera"></i>TVN TURBO</a></li>
-                          <li><a href="#templatemo-page7"><i class="fa fa-video-camera"></i>HBO</a></li>
-                          <li><a href="#templatemo-page8"><i class="fa fa-video-camera"></i>HBO2</a></li>
-                          <br>
-                          <li><a href="#templatemo-page9"><i class="fa fa-video-camera"></i>CANAL+ Premium</a></li>
-                          <li><a href="#templatemo-page10"><i class="fa fa-video-camera"></i>Canal+Film</a></li>
-                          <li><a href="#templatemo-page11"><i class="fa fa-video-camera"></i>Canal+ Seriale</a></li>
-                          <li><a href="#templatemo-page12"><i class="fa fa-video-camera"></i>AXN Black</a></li>
-                          <li><a href="#templatemo-page13"><i class="fa fa-video-camera"></i>AXN Spin</a></li>
-                          <li><a href="#templatemo-page14"><i class="fa fa-video-camera"></i>AXN White</a></li>
-                          <li><a href="#templatemo-page15"><i class="fa fa-video-camera"></i>Kino Polska</a></li>
-                          <li><a href="#templatemo-page16"><i class="fa fa-video-camera"></i>Ale Kino+</a></li>
+		<a id="playlistItem_1" class="playing" href="javascript:void(null)" onclick="programmeShow('https://www.hlsplayer.org/play?url=https://tv.telewizja-streamer.xyz:8080/TVPINFO/index.m3u8');">
+		<img src="/logo/tvpinfo.png" alt="" width="40" height="40"/><strong>TVP INFO</strong><div style="clear:both;"></div></a>
 
-                      </ul>
-                  </div><!--/.nav-collapse -->
-              </div><!--/.container-fluid -->
-          </div>
-          <div class="image-section">
-            <div class="image-container">
-                <img src="images/templatemo-bg-1.jpg" id="templatemo-page1-img" class="main-img inactive" alt="Home">
-                <img src="images/templatemo-bg-1.jpg" id="templatemo-page2-img" class="inactive" alt="Services">
-                <img src="images/templatemo-bg-1.jpg" id="templatemo-page3-img"  class="inactive" alt="Awards">
-                <img src="images/templatemo-bg-1.jpg" id="templatemo-page4-img" class="inactive" alt="Company">
-                <img src="images/templatemo-bg-1.jpg" id="templatemo-page5-img" class="inactive" alt="Contact">
-                <img src="images/templatemo-bg-1.jpg" id="templatemo-page6-img" class="inactive" alt="Contact">
-                <img src="images/templatemo-bg-1.jpg" id="templatemo-page7-img" class="inactive" alt="Contact">
-                <img src="images/templatemo-bg-1.jpg" id="templatemo-page8-img" class="inactive" alt="Contact">
-                <img src="images/templatemo-bg-1.jpg" id="templatemo-page9-img" class="inactive" alt="Contact">
-                <img src="images/templatemo-bg-1.jpg" id="templatemo-page10-img" class="inactive" alt="Contact">
-                <img src="images/templatemo-bg-1.jpg" id="templatemo-page11-img" class="inactive" alt="Contact">
-                <img src="images/templatemo-bg-1.jpg" id="templatemo-page12-img" class="inactive" alt="Contact">
-                <img src="images/templatemo-bg-1.jpg" id="templatemo-page13-img" class="inactive" alt="Contact">
-                <img src="images/templatemo-bg-1.jpg" id="templatemo-page14-img" class="inactive" alt="Contact">
-                <img src="images/templatemo-bg-1.jpg" id="templatemo-page15-img" class="inactive" alt="Contact">
-                <img src="images/templatemo-bg-1.jpg" id="templatemo-page16-img" class="inactive" alt="Contact">
+		<a id="playlistItem_0" class="playing" href="javascript:void(null)" onclick="programmeShow('https://www.hlsplayer.org/play?url=https://tv.telewizja-streamer.xyz:8080/POLSAT/index.m3u8');">
+			<img src="/logo/polsat.png" alt="polsat" width="40" height="40"/><strong>POLSAT</strong><div style="clear:both;"></div></a>
+
+		<a id="playlistItem_0" class="playing" href="javascript:void(null)" onclick="programmeShow('https://event.telewizja-streamer.xyz:8080/polsatfilm/embed.html');">
+			<img src="/logo/polsatfilm.png" alt="polsat" width="40" height="40"/><strong>POLSAT FILM</strong><div style="clear:both;"></div></a>
+
+		<a id="playlistItem_0" class="playing" href="javascript:void(null)" onclick="programmeShow('https://event.telewizja-streamer.xyz:8080/polsatcafe/embed.html');">
+			<img src="/logo/polsatcafe.png" alt="polsat" width="40" height="40"/><strong>POLSAT CAFE</strong><div style="clear:both;"></div></a>
+
+		<a id="playlistItem_0" class="playing" href="javascript:void(null)" onclick="programmeShow('https://event.telewizja-streamer.xyz:8080/polsatplay/embed.html');">
+			<img src="/logo/polsatplay.png" alt="polsat" width="40" height="40"/><strong>POLSAT PLAY</strong><div style="clear:both;"></div></a>
 
 
-            </div>
-        </div>
+		<a id="playlistItem_0" class="playing" href="javascript:void(null)" onclick="programmeShow('https://www.hlsplayer.org/play?url=https://tv.telewizja-streamer.xyz:8080/tvn/index.m3u8');">
+			<img src="/logo/tvn.png" alt="tvn" width="40" height="40"/><strong>TVN</strong><div style="clear:both;"></div></a>
 
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 templatemo-content-wrapper">
-                <div class="templatemo-content">   
-                    <section id="templatemo-page1-text" class="active">
-                        <div class="col-sm-12 col-md-12">
-                            <center><h2>TVP1</h2>
-                            <div id="slider" >
-<video
-    id="my-video"
-    class="video-js"
-    controls
-    preload="auto"
-    width="980"
-    height="auto"
-    data-setup="{}"
-  >
- <source src="https://ec01.gdn2.cache.orange.pl/dai/org1/vb/tvp1hd/index.m3u8" type="application/x-mpegURL">
-    <p class="vjs-no-js">
-      <a href="https://videojs.com/html5-video-support/" target="_blank"></a>
-    </p></center>
-  </video>                              
+		<a id="playlistItem_0" class="playing" href="javascript:void(null)" onclick="programmeShow('https://www.hlsplayer.org/play?url=https://tv.telewizja-streamer.xyz:8080/tvn7/index.m3u8');">
+			<img src="/logo/tvn7.jpg" alt="tvn" width="40" height="40"/><strong>TVN7</strong>
+			<div style="clear:both;"></div>
+		</a>
+		<a id="playlistItem_0" class="playing" href="javascript:void(null)" onclick="programmeShow('https://www.hlsplayer.org/play?url=https://tv.telewizja-streamer.xyz:8080/tvnturbo/index.m3u8');">
+			<img src="/logo/tvnturbo.png" alt="tvn" width="40" height="40"/><strong>TVN Turbo</strong><div style="clear:both;"></div></a>
 
-              </div>
-          </section><!-- /.templatemo-page1-text --> 
-          <section id="templatemo-page2-text" class="inactive">
-                        <div class="col-sm-12 col-md-12">
-                            <center><h2>TVP2</h2>
-                                                <video
-    id="my-video"
-    class="video-js"
-    controls
-    preload="auto"
-    width="980"
-    height="550"
-    data-setup="{}"
-  >
- <source src="https://ec01.gdn2.cache.orange.pl/dai/org1/vb/tvp2hd/index.m3u8" type="application/x-mpegURL">
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
-    </p>
-  </video>
-  </center>
-                              </li>
-                </div>
-        </section><!-- /.templatemo-page2-text -->                 
-        <section id="templatemo-page3-text" class="inactive">
-                        <div class="col-sm-12 col-md-12">
-                <center><h2>POLSAT</h2>
-                                                <video
-    id="my-video"
-    class="video-js"
-    controls
-    preload="auto"
-    width="980"
-    height="550"
-    data-setup="{}"
-  >
-  <source src="https://tv.telewizja-streamer.xyz:8080/POLSAT/index.m3u8" type="application/x-mpegURL">
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
-    </p>
-  </video>
-  </center>
-            </div>
-                    </section><!-- /.templatemo-page3-text -->                 
-        <section id="templatemo-page4-text" class="inactive">
-                        <div class="col-sm-12 col-md-12">
-                <center><h2>TVN</h2>
-                                                <video
-    id="my-video"
-    class="video-js"
-    controls
-    preload="auto"
-    width="980"
-    height="550"
-    data-setup="{}"
-  >
-  <source src="https://tv.telewizja-streamer.xyz:8080/tvn/index.m3u8" type="application/x-mpegURL">
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
-    </p>
-  </video>
-  </center>
-            </div>
-            
-            
-        </section><!-- /.templatemo-page4-text --> 
+		<a id="playlistItem_0" class="playing" href="javascript:void(null)" onclick="programmeShow('https://tv.telewizja-streamer.xyz:8080/tvnfabula/embed.html');">
+			<img src="/logo/tvnfabula.png" alt="tvn" width="40" height="40"/><strong>TVN FABULA</strong><div style="clear:both;"></div></a>
+		<a id="playlistItem_1" class="playing" href="javascript:void(null)" onclick="programmeShow('https://www.hlsplayer.org/play?url=https://tv.telewizja-streamer.xyz:8080/TVN24/index.m3u8');">
+		<img src="/logo/tvn24.png" alt="" width="40" height="40"/><strong>TVN 24</strong>
+			<div style="clear:both;"></div></a>
+		<a id="playlistItem_1" class="playing" href="javascript:void(null)" onclick="programmeShow('https://www.hlsplayer.org/play?url=https://tv.telewizja-streamer.xyz:8080/TVN24BIS/index.m3u8');">
+		<img src="/logo/tvn24bis.png" alt="" width="40" height="40"/><strong>TVN 24 BiS</strong>
+			<div style="clear:both;"></div></a>
 
-        <section id="templatemo-page5-text" class="inactive">
-                                   <div class="col-sm-12 col-md-12">
-                <center><h2>TVN 7</h2>
-                                                <video
-    id="my-video"
-    class="video-js"
-    controls
-    preload="auto"
-    width="980"
-    height="550"
-    data-setup="{}"
-  >
-  <source src="https://tv.telewizja-streamer.xyz:8080/tvn7/index.m3u8" type="application/x-mpegURL">
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
-    </p>
-  </video>
-  </center>
-            </div>
-        </section><!-- /.templatemo-page5-text --> 
 
-        <section id="templatemo-page6-text" class="inactive">
-                                   <div class="col-sm-12 col-md-12">
-                <center><h2>TVN TURBO</h2>
-                                                <video
-    id="my-video"
-    class="video-js"
-    controls
-    preload="auto"
-    width="980"
-    height="550"
-    data-setup="{}"
-  >
-  <source src="https://tv.telewizja-streamer.xyz:8080/tvnturbo/index.m3u8" type="application/x-mpegURL">
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
-    </p>
-  </video>
-  </center>
-            </div>
-        </section><!-- /.templatemo-page6-text --> 
-        <section id="templatemo-page7-text" class="inactive">
-                                   <div class="col-sm-12 col-md-12">
-                <center><h2>HBO</h2>
-                                                <video
-    id="my-video"
-    class="video-js"
-    controls
-    preload="auto"
-    width="980"
-    height="550"
-    data-setup="{}"
-  >
-  <source src="https://tv.telewizja-streamer.xyz:8080/HBO/index.m3u8" type="application/x-mpegURL">
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
-    </p>
-  </video>
-  </center>
-            </div>
-        </section><!-- /.templatemo-page7-text -->
-        <section id="templatemo-page8-text" class="inactive">
-                                   <div class="col-sm-12 col-md-12">
-                <center><h2>HBO 2</h2>
-                                                <video
-    id="my-video"
-    class="video-js"
-    controls
-    preload="auto"
-    width="980"
-    height="550"
-    data-setup="{}"
-  >
-  <source src="https://tv.telewizja-streamer.xyz:8080/HBO2/index.m3u8" type="application/x-mpegURL">
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
-    </p>
-  </video>
-  </center>
-            </div>
-        </section><!-- /.templatemo-page8-text -->
-        <section id="templatemo-page9-text" class="inactive">
-                                   <div class="col-sm-12 col-md-12">
-                <center><h2>Canal+ Premium</h2>
-                                                <video
-    id="my-video"
-    class="video-js"
-    controls
-    preload="auto"
-    width="980"
-    height="550"
-    data-setup="{}"
-  >
-  <source src="https://tv.telewizja-streamer.xyz:8080/canalplus/index.m3u8" type="application/x-mpegURL">
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
-    </p>
-  </video>
-  </center>
-            </div>
-        </section><!-- /.templatemo-page9-text --> 
-               <section id="templatemo-page10-text" class="inactive">
-                                   <div class="col-sm-12 col-md-12">
-                <center><h2>Canal+ Film</h2>
-                                                <video
-    id="my-video"
-    class="video-js"
-    controls
-    preload="auto"
-    width="980"
-    height="550"
-    data-setup="{}"
-  >
-  <source src="https://tv.telewizja-streamer.xyz:8080/canalfilm/index.m3u8" type="application/x-mpegURL">
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
-    </p>
-  </video>
-  </center>
-            </div>
-        </section><!-- /.templatemo-page10-text -->
-                       <section id="templatemo-page11-text" class="inactive">
-                                   <div class="col-sm-12 col-md-12">
-                <center><h2>Canal+ Seriale</h2>
-                                                <video
-    id="my-video"
-    class="video-js"
-    controls
-    preload="auto"
-    width="980"
-    height="550"
-    data-setup="{}"
-  >
-  <source src="https://tv.telewizja-streamer.xyz:8080/canalplusseriale/index.m3u8" type="application/x-mpegURL">
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
-    </p>
-  </video>
-  </center>
-            </div>
-        </section><!-- /.templatemo-page11-text --> 
-        <section id="templatemo-page12-text" class="inactive">
-                                   <div class="col-sm-12 col-md-12">
-                <center><h2>AXN Black</h2>
-                                                <video
-    id="my-video"
-    class="video-js"
-    controls
-    preload="auto"
-    width="980"
-    height="550"
-    data-setup="{}"
-  >
-  <source src="https://tv.telewizja-streamer.xyz:8080/AXNBlack/index.m3u8" type="application/x-mpegURL">
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
-    </p>
-  </video>
-  </center>
-            </div>
-        </section><!-- /.templatemo-page12-text -->
-                <section id="templatemo-page13-text" class="inactive">
-                                   <div class="col-sm-12 col-md-12">
-                <center><h2>AXN Spin</h2>
-                                                <video
-    id="my-video"
-    class="video-js"
-    controls
-    preload="auto"
-    width="980"
-    height="550"
-    data-setup="{}"
-  >
-  <source src="https://tv.telewizja-streamer.xyz:8080/AXNSpin/index.m3u8" type="application/x-mpegURL">
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
-    </p>
-  </video>
-  </center>
-            </div>
-        </section><!-- /.templatemo-page13-text -->
-                <section id="templatemo-page14-text" class="inactive">
-                                   <div class="col-sm-12 col-md-12">
-                <center><h2>AXN White</h2>
-                                                <video
-    id="my-video"
-    class="video-js"
-    controls
-    preload="auto"
-    width="980"
-    height="550"
-    data-setup="{}"
-  >
-  <source src="https://tv.telewizja-streamer.xyz:8080/AXNWhite/index.m3u8" type="application/x-mpegURL">
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
-    </p>
-  </video>
-  </center>
-            </div>
-        </section><!-- /.templatemo-page14-text -->
-                        <section id="templatemo-page15-text" class="inactive">
-                                   <div class="col-sm-12 col-md-12">
-                <center><h2>Kino Polska</h2>
-                                                <video
-    id="my-video"
-    class="video-js"
-    controls
-    preload="auto"
-    width="980"
-    height="550"
-    data-setup="{}"
-  >
-  <source src="https://tv.telewizja-streamer.xyz:8080/kinopolska/index.m3u8" type="application/x-mpegURL">
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
-    </p>
-  </video>
-  </center>
-            </div>
-        </section><!-- /.templatemo-page15-text -->
-                        <section id="templatemo-page16-text" class="inactive">
-                                   <div class="col-sm-12 col-md-12">
-                <center><h2>Ale Kino+</h2>
-                                                <video
-    id="my-video"
-    class="video-js"
-    controls
-    preload="auto"
-    width="980"
-    height="550"
-    data-setup="{}"
-  >
-  <source src="https://tv.telewizja-streamer.xyz:8080/alekino/index.m3u8" type="application/x-mpegURL">
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
-    </p>
-  </video>
-  </center>
-            </div>
-        </section><!-- /.templatemo-page16-text -->          
-    </div><!-- /.templatemo-content -->  
-</div><!-- /.templatemo-content-wrapper --> 
-</div><!-- /.row --> 
+		<a id="playlistItem_1" class="playing" href="javascript:void(null)" onclick="programmeShow('https://www.hlsplayer.org/play?url=https://tv.telewizja-streamer.xyz:8080/canalplus1/index.m3u8');">
+		<img src="/logo/canal1.png" alt="" width="40" height="40"/><strong>CANAL+ 1</strong><div style="clear:both;"></div></a>
 
-<div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer">
-        <div class="footer-wrapper">
-                      <p id="tm-copyright">
-            	Copyright &copy; 2022 Company 
-            </p>
-            </div>                    
-        </div><!-- /.footer --> 
-    </div>               
-</div> <!-- /.container -->
-</div><!-- /#main-wrapper -->
+		<a id="playlistItem_1" class="playing" href="javascript:void(null)" onclick="programmeShow('https://www.hlsplayer.org/play?url=https://tv.telewizja-streamer.xyz:8080/canalplus/index.m3u8');">
+		<img src="/logo/canalpremium.png" alt="" width="40" height="40"/><strong>CANAL+ PREMIUM</strong><div style="clear:both;"></div></a>
 
-<div id="preloader">
-    <div id="status">&nbsp;</div>
-</div><!-- /#preloader -->
-<script src="https://vjs.zencdn.net/8.0.4/video.min.js"></script>
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery.backstretch.min.js"></script>
-<script src="js/jquery.flexslider.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/templatemo_script.js"></script>
+		<a id="playlistItem_1" class="playing" href="javascript:void(null)" onclick="programmeShow('https://www.hlsplayer.org/play?url=https://tv.telewizja-streamer.xyz:8080/canalfilm/index.m3u8');">
+		<img src="/logo/canalfilm.png" alt="" width="40" height="40"/><strong>CANAL+ FILM</strong><div style="clear:both;"></div></a>
+
+		<a id="playlistItem_1" class="playing" href="javascript:void(null)" onclick="programmeShow('https://www.hlsplayer.org/play?url=https://tv.telewizja-streamer.xyz:8080/canalfamily/index.m3u8');">
+		<img src="/logo/canalfamily.png" alt="" width="40" height="40"/><strong>CANAL+ FAMILY</strong><div style="clear:both;"></div></a>
+
+		<a id="playlistItem_1" class="playing" href="javascript:void(null)" onclick="programmeShow('https://www.hlsplayer.org/play?url=https://tv.telewizja-streamer.xyz:8080/canalplusseriale/index.m3u8');">
+		<img src="/logo/canalseriale.png" alt="" width="40" height="40"/><strong>CANAL+ SERIALE</strong><div style="clear:both;"></div></a>
+
+		<a id="playlistItem_1" class="playing" href="javascript:void(null)" onclick="programmeShow('https://www.hlsplayer.org/play?url=https://tv.telewizja-streamer.xyz:8080/domo/index.m3u8');">
+		<img src="/logo/canaldomo.png" alt="" width="40" height="40"/><strong>CANAL+ DOMO</strong><div style="clear:both;"></div></a>
+
+		<a id="playlistItem_1" class="playing" href="javascript:void(null)" onclick="programmeShow('https://www.hlsplayer.org/play?url=https://tv.telewizja-streamer.xyz:8080/kuchnia/index.m3u8');">
+		<img src="/logo/canalkuchnia.png" alt="" width="40" height="40"/><strong>CANAL+ KUCHNIA</strong><div style="clear:both;"></div></a>
+
+		<a id="playlistItem_1" class="playing" href="javascript:void(null)" onclick="programmeShow('https://www.hlsplayer.org/play?url=https://tv.telewizja-streamer.xyz:8080/alekino/index.m3u8');">
+		<img src="/logo/alekino.png" alt="" width="40" height="40"/><strong>ALE KINO+</strong>
+			<div style="clear:both;"></div></a>
+		<a id="playlistItem_1" class="playing" href="javascript:void(null)" onclick="programmeShow('https://event.telewizja-streamer.xyz:8080/AXN/embed.html');">
+		<img src="/logo/axn.png" alt="" width="40" height="40"/><strong>AXN</strong>
+			<div style="clear:both;"></div></a>
+		<a id="playlistItem_1" class="playing" href="javascript:void(null)" onclick="programmeShow('https://www.hlsplayer.org/play?url=https://tv.telewizja-streamer.xyz:8080/AXNBlack/index.m3u8');">
+		<img src="/logo/axnblack.png" alt="" width="40" height="40"/><strong>AXN BLACK</strong>
+			<div style="clear:both;"></div></a>
+		<a id="playlistItem_1" class="playing" href="javascript:void(null)" onclick="programmeShow('https://www.hlsplayer.org/play?url=https://tv.telewizja-streamer.xyz:8080/AXNSpin/index.m3u8');">
+		<img src="/logo/axnspin.png" alt="" width="40" height="40"/><strong>AXN SPIN</strong>
+			<div style="clear:both;"></div></a>
+		<a id="playlistItem_1" class="playing" href="javascript:void(null)" onclick="programmeShow('https://www.hlsplayer.org/play?url=https://tv.telewizja-streamer.xyz:8080/AXNWhite/index.m3u8');">
+		<img src="/logo/axnwhite.png" alt="" width="40" height="40"/><strong>AXN WHITE</strong>
+			<div style="clear:both;"></div></a>
+		<a id="playlistItem_1" class="playing" href="javascript:void(null)" onclick="programmeShow('https://www.hlsplayer.org/play?url=https://tv.telewizja-streamer.xyz:8080/kinopolska/index.m3u8');">
+		<img src="/logo/kinopolska.png" alt="" width="40" height="40"/><strong>KINO POLSKA</strong>
+			<div style="clear:both;"></div></a>
+		<a id="playlistItem_1" class="playing" href="javascript:void(null)" onclick="programmeShow('https://www.hlsplayer.org/play?url=https://tv.telewizja-streamer.xyz:8080/AMC/index.m3u8');">
+		<img src="/logo/amc.png" alt="" width="40" height="40"/><strong>AMC HD</strong>
+			<div style="clear:both;"></div></a>
+		<a id="playlistItem_1" class="playing" href="javascript:void(null)" onclick="programmeShow('https://www.hlsplayer.org/play?url=https://tv.telewizja-streamer.xyz:8080/TTV/index.m3u8');">
+		<img src="/logo/ttv.png" alt="" width="40" height="40"/><strong>TTV</strong>
+			<div style="clear:both;"></div></a>
+		<a id="playlistItem_1" class="playing" href="javascript:void(null)" onclick="programmeShow('https://event.telewizja-streamer.xyz:8080/polonia1/embed.html');">
+		<img src="/logo/polonia1.png" alt="" width="40" height="40"/><strong>POLONIA 1</strong>
+			<div style="clear:both;"></div></a>
+		<a id="playlistItem_1" class="playing" href="javascript:void(null)" onclick="programmeShow('https://tv.telewizja-streamer.xyz:8080/novelatv/embed.html');">
+		<img src="/logo/novela.png" alt="" width="40" height="40"/><strong>NOVELA TV</strong>
+			<div style="clear:both;"></div></a>
+		<a id="playlistItem_1" class="playing" href="javascript:void(null)" onclick="programmeShow('https://event.telewizja-streamer.xyz:8080/Paramount/embed.html');">
+		<img src="/logo/paramount.png" alt="" width="40" height="40"/><strong>PARAMOUNT</strong>
+			<div style="clear:both;"></div></a>
+
+
+
+
+
+	</div>
+	</div>
+	<!-- let the rest of the page float normally -->
+	<div style="clear:both;"></div>
+	
+
+	
+
+	<script>
+	const CONFIG_BASEDIR = "https://nakotv.prv.pl/";
+	const CONFIG_STATICDIR = "https://nakotv.prv.pl/";
+	var activeChannel = -1;
+	var dataObj = [];
+		
+		function getPlayer()
+		{
+			return window["player_object"];
+		}
+		
+		function reloadPlayer(channel)
+		{
+			document.getElementById('playerIframe').src = '' + channel + '';
+			//getPlayer().reload(channel);
+		}
+		
+	
+	function programmeShow(id)
+	{
+		if(activeChannel != -1)
+		{
+			activeChannel = id;
+			dataArr = dataObj[id];
+			document.title = dataArr.channel_title?dataArr.channel_title:dataArr.channel_name + " - Telewizja internetowa - NakoTV";
+			
+			checkAllRows = jQuery('.rightBarProgram').length;
+			for(i=0; i< checkAllRows; i++)
+			{
+				if( i == id) continue;
+				jQuery("#playlistItem_"+i).removeClass('playing');
+			}
+			jQuery("#playlistItem_"+id).addClass('playing');
+			jQuery('#channel_img_logo').attr('src', dataArr.channel_logo_url);
+			jQuery('#channel_img_logo').attr('alt', 'Logo ' + dataArr.channel_name);
+			jQuery('#channel_img_banner').attr('src', dataArr.channel_banner_url);
+			jQuery('#channel_img_banner').attr('alt', 'Banner ' + dataArr.channel_name);
+			jQuery('#channel_name').text(dataArr.channel_name);
+			jQuery('#channel_title').text(dataArr.channel_title);
+			jQuery('#channel_description').html(dataArr.channel_description);
+			jQuery('#channel_tags').text(dataArr.channel_tags);
+			jQuery('#channel_broadcaster').text(dataArr.user_name).attr('src', '//weeb.tv/user/profil'+ dataArr.user_name);
+			jQuery('#channel_broadcaster').attr('title', 'WiÄ™cej o uĹĽytkowniku ' + dataArr.user_name);
+			//jQuery('#playlistContent').children('a').each(function( index, element ) { jQuery(this).show(); });
+			//jQuery('#playlistSearchBox').val('');
+			
+			window.history.pushState("", "", '/channel/'+dataArr.channel_name);
+			
+			reloadPlayer(dataArr.channel_name);
+		}
+		else
+		{
+			reloadPlayer(id);
+		}
+	}
+
+	function searchPlaylist(searchString)
+	{
+		var re = new RegExp(searchString, "i");
+
+		jQuery('#playlistContent').children('a').each(
+		function( index, element )
+		{
+			var name = jQuery(this).find('strong').first().text();
+			if (re.test(name))
+			{
+				jQuery(this).show();
+			}
+			else
+			{
+				jQuery(this).hide();
+			}
+		});
+		
+		jQuery('#playlistContent').trigger('scroll');
+	}
+
+	function getJsonData()
+	{
+		jQuery.getJSON(CONFIG_BASEDIR+'json/channels&playingChannel=' + jQuery('#channel_name').text(),
+		function(data)
+		{
+			dataObj = data;
+			jQuery('#playlistContent').html('');
+			jQuery.each(data,
+			function (key, value)
+			{
+				if(key == 0)
+				{
+					setClass = 'playing';
+				}
+				else
+				{
+					setClass = '';
+				}
+				jQuery('#playlistContent').append(
+							'<a id="playlistItem_'+ key +'" class="'+setClass+' rightBarProgram" href="javascript:void(null)" onclick="programmeShow(\''+key+'\');">'+
+							'                <img src="'+ CONFIG_STATICDIR +'images/no_video.png" class="lazy" data-original="'+value.channel_logo_url+'" alt="'+value.channel_name+'" width="40" height="40"/>'+
+							'                <strong>'+value.channel_title+'</strong>'+
+							'                <br />na '+value.channel_name+'</span>'+
+							'                <br />przez '+value.user_name +
+							'                <div style="clear:both;"></div>'+
+							'            </a>');
+			});
+			jQuery(function(){jQuery("img.lazy").lazyload({container: jQuery("#playlistContent")});});
+			if(activeChannel != -1)
+			{
+				searchPlaylist( jQuery( '#playlistSearchBox' ).val() );
+			}
+			activeChannel = 1;
+		});
+	}
+	getJsonData();
+
+	jQuery( document ).ready(
+	function()
+	{
+		jQuery('#playlistSearchBox').val('');
+		jQuery('#playlistSearchBox').keyup(
+		function()
+		{
+			searchPlaylist( jQuery( '#playlistSearchBox' ).val() );
+		});
+		jQuery("#svgRefreshPlaylist").mousedown(function(){ getJsonData(); });
+	});
+
+	</script>
+</div>
+
+
+
+
+
+
+	
+
+
+
+<!-- Matomo -->
+<!--
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://as.wtvserver.xyz/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '3']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+-->
+<!-- End Matomo Code -->
+
+
+
 </body>
 </html>
